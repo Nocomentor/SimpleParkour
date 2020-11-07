@@ -1,0 +1,9 @@
+name: SimpleParkour
+version: 1.0
+author: PanSebastian
+main: com.pansebastian.simpleparkour.SimpleParkour
+api-version: 1.8
+depend: [Komunikaty]
+commands:
+  debug:
+    description: debug options
