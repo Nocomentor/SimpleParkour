@@ -2,7 +2,6 @@ package com.pansebastian.simpleparkour;
 
 import com.pansebastian.simpleparkour.commands.debug;
 import com.pansebastian.simpleparkour.events.SPEvents;
-import com.pansebastian.simpleparkour.objects.Parkour;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -13,9 +12,8 @@ public class SimpleParkour extends JavaPlugin {
         {
             RegisterCommands();
             RegisterListeners();
-            LoadConfig();
 
-            ParkourManager.loadParkours();
+            ConfigManager.loadParkours();
 
             getServer().getConsoleSender().sendMessage(ChatColor.AQUA + "[SimpleParkour]: Pomyslnie zaladowano plugin");
         }
@@ -36,12 +34,6 @@ public class SimpleParkour extends JavaPlugin {
         private void RegisterListeners()
         {
             getServer().getPluginManager().registerEvents(new SPEvents(), this);
-        }
-
-        private void LoadConfig()
-        {
-            getConfig().options().copyDefaults(true);
-            saveConfig();
         }
 
 }

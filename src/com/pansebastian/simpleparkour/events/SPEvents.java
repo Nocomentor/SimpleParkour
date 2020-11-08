@@ -28,14 +28,16 @@ public class SPEvents implements Listener {
 
         Boolean isOnPlate = isOnPlateMap.get(uuid);
 
-        if(!isOnPlate && (playerBlock == Material.IRON_PLATE || playerBlock == Material.GOLD_PLATE))
+        if((playerBlock == Material.IRON_PLATE || playerBlock == Material.GOLD_PLATE) && !isOnPlate)
         {
             isOnPlateMap.put(uuid, true);
             ParkourManager.plateEntry(p);
+            MalyKom.debug("na");
         }
-        else
+        else if (!(playerBlock == Material.IRON_PLATE || playerBlock == Material.GOLD_PLATE) && isOnPlate)
         {
             isOnPlateMap.put(uuid, false);
+            MalyKom.debug("nie na");
         }
 
 
